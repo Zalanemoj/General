@@ -1,0 +1,1609 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "02ceec62",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005346,
+     "end_time": "2026-01-25T06:04:11.223519",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:11.218173",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Libraries"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "0f19c477",
+   "metadata": {
+    "_cell_guid": "b1076dfc-b9ad-4769-8c92-a6c4dae69d19",
+    "_uuid": "8f2839f25d086af736a60e9eeb907d3b93b6e0e5",
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:11.234325Z",
+     "iopub.status.busy": "2026-01-25T06:04:11.233973Z",
+     "iopub.status.idle": "2026-01-25T06:04:12.708763Z",
+     "shell.execute_reply": "2026-01-25T06:04:12.707684Z"
+    },
+    "papermill": {
+     "duration": 1.483192,
+     "end_time": "2026-01-25T06:04:12.711208",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:11.228016",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt\n",
+    "import tqdm.auto as tqdm\n",
+    "import os\n",
+    "import warnings\n",
+    "warnings.filterwarnings('ignore')\n",
+    "from functools import reduce"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "65196a6b",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:12.722765Z",
+     "iopub.status.busy": "2026-01-25T06:04:12.721691Z",
+     "iopub.status.idle": "2026-01-25T06:04:12.777451Z",
+     "shell.execute_reply": "2026-01-25T06:04:12.776420Z"
+    },
+    "papermill": {
+     "duration": 0.064098,
+     "end_time": "2026-01-25T06:04:12.779782",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:12.715684",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "df_hdfc=pd.read_csv('/kaggle/input/data-cleaning-historical/Cleaned_RELIANCE.NS_Max.csv')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "beae2b9a",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:12.791537Z",
+     "iopub.status.busy": "2026-01-25T06:04:12.790192Z",
+     "iopub.status.idle": "2026-01-25T06:04:12.822422Z",
+     "shell.execute_reply": "2026-01-25T06:04:12.821340Z"
+    },
+    "papermill": {
+     "duration": 0.040369,
+     "end_time": "2026-01-25T06:04:12.824761",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:12.784392",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Date</th>\n",
+       "      <th>Open</th>\n",
+       "      <th>High</th>\n",
+       "      <th>Low</th>\n",
+       "      <th>Close</th>\n",
+       "      <th>Adj Close</th>\n",
+       "      <th>Volume</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>1995-12-31</td>\n",
+       "      <td>7.319124</td>\n",
+       "      <td>7.358397</td>\n",
+       "      <td>7.270925</td>\n",
+       "      <td>7.345901</td>\n",
+       "      <td>4.617048</td>\n",
+       "      <td>104121369</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>1996-01-01</td>\n",
+       "      <td>7.328050</td>\n",
+       "      <td>7.363753</td>\n",
+       "      <td>7.235222</td>\n",
+       "      <td>7.288776</td>\n",
+       "      <td>4.581145</td>\n",
+       "      <td>168743308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>1996-01-02</td>\n",
+       "      <td>7.408381</td>\n",
+       "      <td>7.745775</td>\n",
+       "      <td>7.328050</td>\n",
+       "      <td>7.344116</td>\n",
+       "      <td>4.615928</td>\n",
+       "      <td>209323879</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>1996-01-03</td>\n",
+       "      <td>7.274495</td>\n",
+       "      <td>7.297702</td>\n",
+       "      <td>7.178097</td>\n",
+       "      <td>7.276280</td>\n",
+       "      <td>4.573291</td>\n",
+       "      <td>216900264</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>1996-01-04</td>\n",
+       "      <td>7.247718</td>\n",
+       "      <td>7.247718</td>\n",
+       "      <td>7.163816</td>\n",
+       "      <td>7.226296</td>\n",
+       "      <td>4.541874</td>\n",
+       "      <td>166708467</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "         Date      Open      High       Low     Close  Adj Close     Volume\n",
+       "0  1995-12-31  7.319124  7.358397  7.270925  7.345901   4.617048  104121369\n",
+       "1  1996-01-01  7.328050  7.363753  7.235222  7.288776   4.581145  168743308\n",
+       "2  1996-01-02  7.408381  7.745775  7.328050  7.344116   4.615928  209323879\n",
+       "3  1996-01-03  7.274495  7.297702  7.178097  7.276280   4.573291  216900264\n",
+       "4  1996-01-04  7.247718  7.247718  7.163816  7.226296   4.541874  166708467"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df_hdfc.head(5)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7815a806",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004564,
+     "end_time": "2026-01-25T06:04:12.834094",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:12.829530",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Preprocessing/Adding prefic to coloumns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "1cfcbf1f",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:12.844850Z",
+     "iopub.status.busy": "2026-01-25T06:04:12.844473Z",
+     "iopub.status.idle": "2026-01-25T06:04:12.850496Z",
+     "shell.execute_reply": "2026-01-25T06:04:12.849343Z"
+    },
+    "papermill": {
+     "duration": 0.014344,
+     "end_time": "2026-01-25T06:04:12.852881",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:12.838537",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "df_hdfc = df_hdfc.add_prefix('HDFC_')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "92bff560",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:12.864435Z",
+     "iopub.status.busy": "2026-01-25T06:04:12.863503Z",
+     "iopub.status.idle": "2026-01-25T06:04:12.870987Z",
+     "shell.execute_reply": "2026-01-25T06:04:12.869960Z"
+    },
+    "papermill": {
+     "duration": 0.015791,
+     "end_time": "2026-01-25T06:04:12.873298",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:12.857507",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "def add_prefix_function(data,prefix):\n",
+    "    return data.add_prefix(prefix)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "b40991c8",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:12.884512Z",
+     "iopub.status.busy": "2026-01-25T06:04:12.884141Z",
+     "iopub.status.idle": "2026-01-25T06:04:12.889905Z",
+     "shell.execute_reply": "2026-01-25T06:04:12.888800Z"
+    },
+    "papermill": {
+     "duration": 0.014301,
+     "end_time": "2026-01-25T06:04:12.892259",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:12.877958",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "df_hdfc = add_prefix_function(df_hdfc, \"HDFC_\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "7b876811",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:12.903450Z",
+     "iopub.status.busy": "2026-01-25T06:04:12.903107Z",
+     "iopub.status.idle": "2026-01-25T06:04:12.916336Z",
+     "shell.execute_reply": "2026-01-25T06:04:12.915023Z"
+    },
+    "papermill": {
+     "duration": 0.021511,
+     "end_time": "2026-01-25T06:04:12.918458",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:12.896947",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>HDFC_HDFC_Date</th>\n",
+       "      <th>HDFC_HDFC_Open</th>\n",
+       "      <th>HDFC_HDFC_High</th>\n",
+       "      <th>HDFC_HDFC_Low</th>\n",
+       "      <th>HDFC_HDFC_Close</th>\n",
+       "      <th>HDFC_HDFC_Adj Close</th>\n",
+       "      <th>HDFC_HDFC_Volume</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>1995-12-31</td>\n",
+       "      <td>7.319124</td>\n",
+       "      <td>7.358397</td>\n",
+       "      <td>7.270925</td>\n",
+       "      <td>7.345901</td>\n",
+       "      <td>4.617048</td>\n",
+       "      <td>104121369</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>1996-01-01</td>\n",
+       "      <td>7.328050</td>\n",
+       "      <td>7.363753</td>\n",
+       "      <td>7.235222</td>\n",
+       "      <td>7.288776</td>\n",
+       "      <td>4.581145</td>\n",
+       "      <td>168743308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>1996-01-02</td>\n",
+       "      <td>7.408381</td>\n",
+       "      <td>7.745775</td>\n",
+       "      <td>7.328050</td>\n",
+       "      <td>7.344116</td>\n",
+       "      <td>4.615928</td>\n",
+       "      <td>209323879</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>1996-01-03</td>\n",
+       "      <td>7.274495</td>\n",
+       "      <td>7.297702</td>\n",
+       "      <td>7.178097</td>\n",
+       "      <td>7.276280</td>\n",
+       "      <td>4.573291</td>\n",
+       "      <td>216900264</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>1996-01-04</td>\n",
+       "      <td>7.247718</td>\n",
+       "      <td>7.247718</td>\n",
+       "      <td>7.163816</td>\n",
+       "      <td>7.226296</td>\n",
+       "      <td>4.541874</td>\n",
+       "      <td>166708467</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "  HDFC_HDFC_Date  HDFC_HDFC_Open  HDFC_HDFC_High  HDFC_HDFC_Low  \\\n",
+       "0     1995-12-31        7.319124        7.358397       7.270925   \n",
+       "1     1996-01-01        7.328050        7.363753       7.235222   \n",
+       "2     1996-01-02        7.408381        7.745775       7.328050   \n",
+       "3     1996-01-03        7.274495        7.297702       7.178097   \n",
+       "4     1996-01-04        7.247718        7.247718       7.163816   \n",
+       "\n",
+       "   HDFC_HDFC_Close  HDFC_HDFC_Adj Close  HDFC_HDFC_Volume  \n",
+       "0         7.345901             4.617048         104121369  \n",
+       "1         7.288776             4.581145         168743308  \n",
+       "2         7.344116             4.615928         209323879  \n",
+       "3         7.276280             4.573291         216900264  \n",
+       "4         7.226296             4.541874         166708467  "
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df_hdfc.head(5)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "62299d01",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:12.929561Z",
+     "iopub.status.busy": "2026-01-25T06:04:12.929211Z",
+     "iopub.status.idle": "2026-01-25T06:04:12.937930Z",
+     "shell.execute_reply": "2026-01-25T06:04:12.936377Z"
+    },
+    "papermill": {
+     "duration": 0.017055,
+     "end_time": "2026-01-25T06:04:12.940332",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:12.923277",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "import glob\n",
+    "list_to_make_changes=glob.glob('/kaggle/input/data-cleaning-historical/*.csv')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "44e25440",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:12.952642Z",
+     "iopub.status.busy": "2026-01-25T06:04:12.951147Z",
+     "iopub.status.idle": "2026-01-25T06:04:12.957468Z",
+     "shell.execute_reply": "2026-01-25T06:04:12.956636Z"
+    },
+    "papermill": {
+     "duration": 0.014572,
+     "end_time": "2026-01-25T06:04:12.959712",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:12.945140",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['/kaggle/input/data-cleaning-historical/Cleaned_NSEI_MAX.csv', '/kaggle/input/data-cleaning-historical/Cleaned_IXIC_Max.csv', '/kaggle/input/data-cleaning-historical/Cleaned_HDFCBANK.NS_MAX_NSE.csv', '/kaggle/input/data-cleaning-historical/Cleaned_GSPC_Max.csv', '/kaggle/input/data-cleaning-historical/Cleaned_BSESN_Max.csv', '/kaggle/input/data-cleaning-historical/Cleaned_RELIANCE.NS_Max.csv', '/kaggle/input/data-cleaning-historical/Cleaned_RUT_Max.csv']\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(list_to_make_changes)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "195a94bc",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:12.971481Z",
+     "iopub.status.busy": "2026-01-25T06:04:12.970722Z",
+     "iopub.status.idle": "2026-01-25T06:04:12.977071Z",
+     "shell.execute_reply": "2026-01-25T06:04:12.975977Z"
+    },
+    "papermill": {
+     "duration": 0.01455,
+     "end_time": "2026-01-25T06:04:12.979168",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:12.964618",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "prefix=[]\n",
+    "for i in list_to_make_changes:\n",
+    "    filename=os.path.basename(i)\n",
+    "    prefix.append(filename.split('_')[1])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "629a3f91",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:12.991504Z",
+     "iopub.status.busy": "2026-01-25T06:04:12.991110Z",
+     "iopub.status.idle": "2026-01-25T06:04:12.996509Z",
+     "shell.execute_reply": "2026-01-25T06:04:12.995457Z"
+    },
+    "papermill": {
+     "duration": 0.013944,
+     "end_time": "2026-01-25T06:04:12.998779",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:12.984835",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['NSEI', 'IXIC', 'HDFCBANK.NS', 'GSPC', 'BSESN', 'RELIANCE.NS', 'RUT']\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(prefix)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "c4ed0626",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:13.010775Z",
+     "iopub.status.busy": "2026-01-25T06:04:13.009940Z",
+     "iopub.status.idle": "2026-01-25T06:04:13.015926Z",
+     "shell.execute_reply": "2026-01-25T06:04:13.014645Z"
+    },
+    "papermill": {
+     "duration": 0.014395,
+     "end_time": "2026-01-25T06:04:13.018186",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:13.003791",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "prefix.remove('RELIANCE.NS')\n",
+    "list_to_make_changes.remove('/kaggle/input/data-cleaning-historical/Cleaned_RELIANCE.NS_Max.csv')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "e4297997",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:13.029672Z",
+     "iopub.status.busy": "2026-01-25T06:04:13.029308Z",
+     "iopub.status.idle": "2026-01-25T06:04:13.714949Z",
+     "shell.execute_reply": "2026-01-25T06:04:13.713796Z"
+    },
+    "papermill": {
+     "duration": 0.693971,
+     "end_time": "2026-01-25T06:04:13.717185",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:13.023214",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "all_data=[]\n",
+    "for file_path,p in zip(list_to_make_changes,prefix):\n",
+    "    data=pd.read_csv(file_path)\n",
+    "    data.columns.str.upper()\n",
+    "    if 'Date' in data.columns:\n",
+    "        data['Date']=pd.to_datetime(data['Date'])\n",
+    "        data=data.set_index('Date')\n",
+    "    data=add_prefix_function(data,f\"{p}_\")\n",
+    "    all_data.append(data)\n",
+    "    data.to_csv(f'{p}.csv',index=True)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "db8437b0",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:13.729033Z",
+     "iopub.status.busy": "2026-01-25T06:04:13.728654Z",
+     "iopub.status.idle": "2026-01-25T06:04:13.742241Z",
+     "shell.execute_reply": "2026-01-25T06:04:13.741201Z"
+    },
+    "papermill": {
+     "duration": 0.022068,
+     "end_time": "2026-01-25T06:04:13.744534",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:13.722466",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "df=pd.read_csv('/kaggle/working/BSESN.csv')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "5a857818",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:13.756667Z",
+     "iopub.status.busy": "2026-01-25T06:04:13.756273Z",
+     "iopub.status.idle": "2026-01-25T06:04:13.769070Z",
+     "shell.execute_reply": "2026-01-25T06:04:13.767968Z"
+    },
+    "papermill": {
+     "duration": 0.02167,
+     "end_time": "2026-01-25T06:04:13.771385",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:13.749715",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Date</th>\n",
+       "      <th>BSESN_Open</th>\n",
+       "      <th>BSESN_High</th>\n",
+       "      <th>BSESN_Low</th>\n",
+       "      <th>BSESN_Close</th>\n",
+       "      <th>BSESN_Adj Close</th>\n",
+       "      <th>BSESN_Volume</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>2003-07-13</td>\n",
+       "      <td>3704.629883</td>\n",
+       "      <td>3726.560059</td>\n",
+       "      <td>3704.629883</td>\n",
+       "      <td>3720.750000</td>\n",
+       "      <td>3720.750000</td>\n",
+       "      <td>21200</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>2003-07-14</td>\n",
+       "      <td>3719.169922</td>\n",
+       "      <td>3733.879883</td>\n",
+       "      <td>3657.179932</td>\n",
+       "      <td>3686.340088</td>\n",
+       "      <td>3686.340088</td>\n",
+       "      <td>22800</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>2003-07-15</td>\n",
+       "      <td>3702.139893</td>\n",
+       "      <td>3729.020020</td>\n",
+       "      <td>3662.699951</td>\n",
+       "      <td>3721.649902</td>\n",
+       "      <td>3721.649902</td>\n",
+       "      <td>18400</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>2003-07-16</td>\n",
+       "      <td>3728.840088</td>\n",
+       "      <td>3750.000000</td>\n",
+       "      <td>3660.340088</td>\n",
+       "      <td>3668.909912</td>\n",
+       "      <td>3668.909912</td>\n",
+       "      <td>22000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>2003-07-17</td>\n",
+       "      <td>3651.389893</td>\n",
+       "      <td>3684.229980</td>\n",
+       "      <td>3625.729980</td>\n",
+       "      <td>3647.580078</td>\n",
+       "      <td>3647.580078</td>\n",
+       "      <td>22000</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "         Date   BSESN_Open   BSESN_High    BSESN_Low  BSESN_Close  \\\n",
+       "0  2003-07-13  3704.629883  3726.560059  3704.629883  3720.750000   \n",
+       "1  2003-07-14  3719.169922  3733.879883  3657.179932  3686.340088   \n",
+       "2  2003-07-15  3702.139893  3729.020020  3662.699951  3721.649902   \n",
+       "3  2003-07-16  3728.840088  3750.000000  3660.340088  3668.909912   \n",
+       "4  2003-07-17  3651.389893  3684.229980  3625.729980  3647.580078   \n",
+       "\n",
+       "   BSESN_Adj Close  BSESN_Volume  \n",
+       "0      3720.750000         21200  \n",
+       "1      3686.340088         22800  \n",
+       "2      3721.649902         18400  \n",
+       "3      3668.909912         22000  \n",
+       "4      3647.580078         22000  "
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df.head(5)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b189d681",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005004,
+     "end_time": "2026-01-25T06:04:13.781666",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:13.776662",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Merging all files"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "2d3e67e7",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:13.793594Z",
+     "iopub.status.busy": "2026-01-25T06:04:13.793211Z",
+     "iopub.status.idle": "2026-01-25T06:04:13.928381Z",
+     "shell.execute_reply": "2026-01-25T06:04:13.927089Z"
+    },
+    "papermill": {
+     "duration": 0.143998,
+     "end_time": "2026-01-25T06:04:13.930784",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:13.786786",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "rm: cannot remove '/kaggle/working/Merged_data.csv': No such file or directory\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!rm /kaggle/working/Merged_data.csv"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "250f8674",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:13.943429Z",
+     "iopub.status.busy": "2026-01-25T06:04:13.943003Z",
+     "iopub.status.idle": "2026-01-25T06:04:14.190210Z",
+     "shell.execute_reply": "2026-01-25T06:04:14.189121Z"
+    },
+    "papermill": {
+     "duration": 0.256293,
+     "end_time": "2026-01-25T06:04:14.192240",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:13.935947",
+     "status": "completed"
+    },
+    "scrolled": true,
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Found 6 files.\n",
+      "✅ Loaded /kaggle/working/NSEI.csv | Shape: (4520, 7)\n",
+      "✅ Loaded /kaggle/working/RUT.csv | Shape: (9654, 7)\n",
+      "✅ Loaded /kaggle/working/GSPC.csv | Shape: (19126, 7)\n",
+      "✅ Loaded /kaggle/working/IXIC.csv | Shape: (10392, 7)\n",
+      "✅ Loaded /kaggle/working/HDFCBANK.NS.csv | Shape: (7885, 7)\n",
+      "✅ Loaded /kaggle/working/BSESN.csv | Shape: (5531, 7)\n",
+      "\n",
+      "Merging 6 DataFrames...\n",
+      "SUCCESS! Final Shape: (28286, 37)\n",
+      "Columns: ['Date', 'NSEI_date', 'NSEI_close', 'NSEI_open', 'NSEI_high', 'NSEI_low', 'NSEI_volume', 'RUT_Open', 'RUT_High', 'RUT_Low', 'RUT_Close', 'RUT_Adj Close', 'RUT_Volume', 'GSPC_Open', 'GSPC_High', 'GSPC_Low', 'GSPC_Close', 'GSPC_Adj Close', 'GSPC_Volume', 'IXIC_Open', 'IXIC_High', 'IXIC_Low', 'IXIC_Close', 'IXIC_Adj Close', 'IXIC_Volume', 'HDFCBANK.NS_date', 'HDFCBANK.NS_close', 'HDFCBANK.NS_open', 'HDFCBANK.NS_high', 'HDFCBANK.NS_low', 'HDFCBANK.NS_volume', 'BSESN_Open', 'BSESN_High', 'BSESN_Low', 'BSESN_Close', 'BSESN_Adj Close', 'BSESN_Volume']\n"
+     ]
+    },
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Date</th>\n",
+       "      <th>NSEI_date</th>\n",
+       "      <th>NSEI_close</th>\n",
+       "      <th>NSEI_open</th>\n",
+       "      <th>NSEI_high</th>\n",
+       "      <th>NSEI_low</th>\n",
+       "      <th>NSEI_volume</th>\n",
+       "      <th>RUT_Open</th>\n",
+       "      <th>RUT_High</th>\n",
+       "      <th>RUT_Low</th>\n",
+       "      <th>...</th>\n",
+       "      <th>HDFCBANK.NS_open</th>\n",
+       "      <th>HDFCBANK.NS_high</th>\n",
+       "      <th>HDFCBANK.NS_low</th>\n",
+       "      <th>HDFCBANK.NS_volume</th>\n",
+       "      <th>BSESN_Open</th>\n",
+       "      <th>BSESN_High</th>\n",
+       "      <th>BSESN_Low</th>\n",
+       "      <th>BSESN_Close</th>\n",
+       "      <th>BSESN_Adj Close</th>\n",
+       "      <th>BSESN_Volume</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>1950-01-03</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>...</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>1950-01-04</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>...</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>1950-01-05</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>...</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>1950-01-06</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>...</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>1950-01-09</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>...</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>5 rows × 37 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "        Date NSEI_date  NSEI_close  NSEI_open  NSEI_high  NSEI_low  \\\n",
+       "0 1950-01-03       NaN         NaN        NaN        NaN       NaN   \n",
+       "1 1950-01-04       NaN         NaN        NaN        NaN       NaN   \n",
+       "2 1950-01-05       NaN         NaN        NaN        NaN       NaN   \n",
+       "3 1950-01-06       NaN         NaN        NaN        NaN       NaN   \n",
+       "4 1950-01-09       NaN         NaN        NaN        NaN       NaN   \n",
+       "\n",
+       "   NSEI_volume  RUT_Open  RUT_High  RUT_Low  ...  HDFCBANK.NS_open  \\\n",
+       "0          NaN       NaN       NaN      NaN  ...               NaN   \n",
+       "1          NaN       NaN       NaN      NaN  ...               NaN   \n",
+       "2          NaN       NaN       NaN      NaN  ...               NaN   \n",
+       "3          NaN       NaN       NaN      NaN  ...               NaN   \n",
+       "4          NaN       NaN       NaN      NaN  ...               NaN   \n",
+       "\n",
+       "   HDFCBANK.NS_high  HDFCBANK.NS_low  HDFCBANK.NS_volume  BSESN_Open  \\\n",
+       "0               NaN              NaN                 NaN         NaN   \n",
+       "1               NaN              NaN                 NaN         NaN   \n",
+       "2               NaN              NaN                 NaN         NaN   \n",
+       "3               NaN              NaN                 NaN         NaN   \n",
+       "4               NaN              NaN                 NaN         NaN   \n",
+       "\n",
+       "   BSESN_High  BSESN_Low  BSESN_Close  BSESN_Adj Close  BSESN_Volume  \n",
+       "0         NaN        NaN          NaN              NaN           NaN  \n",
+       "1         NaN        NaN          NaN              NaN           NaN  \n",
+       "2         NaN        NaN          NaN              NaN           NaN  \n",
+       "3         NaN        NaN          NaN              NaN           NaN  \n",
+       "4         NaN        NaN          NaN              NaN           NaN  \n",
+       "\n",
+       "[5 rows x 37 columns]"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "files = glob.glob('/kaggle/working/*.csv')\n",
+    "print(f\"Found {len(files)} files.\")\n",
+    "all_dataframes = []\n",
+    "for file in files:\n",
+    "    df = pd.read_csv(file, index_col=0)\n",
+    "    df = df.reset_index()\n",
+    "    date_found = False\n",
+    "    for col in df.columns:\n",
+    "        if 'date' in col.lower() or 'index' in col.lower():\n",
+    "            df = df.rename(columns={col: 'Date'})\n",
+    "            date_found = True\n",
+    "            break\n",
+    "            \n",
+    "    if date_found:\n",
+    "        df['Date'] = pd.to_datetime(df['Date'])\n",
+    "        df = df.loc[:, ~df.columns.str.contains('Unnamed')]\n",
+    "        \n",
+    "        all_dataframes.append(df)\n",
+    "        print(f\"✅ Loaded {file} | Shape: {df.shape}\")\n",
+    "    else:\n",
+    "        print(f\"⚠️ SKIPPING {file} (Could not identify Date column)\")\n",
+    "if len(all_dataframes) > 0:\n",
+    "    print(f\"\\nMerging {len(all_dataframes)} DataFrames...\")\n",
+    "    df_final = reduce(lambda left, right: pd.merge(left, right, on='Date', how='outer'), all_dataframes)\n",
+    "    df_final = df_final.sort_values('Date').reset_index(drop=True)\n",
+    "    \n",
+    "    print(\"SUCCESS! Final Shape:\", df_final.shape)\n",
+    "    print(\"Columns:\", df_final.columns.tolist())\n",
+    "    display(df_final.head())\n",
+    "else:\n",
+    "    print(\"❌ No DataFrames loaded.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "cc13e1c8",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:14.205960Z",
+     "iopub.status.busy": "2026-01-25T06:04:14.205560Z",
+     "iopub.status.idle": "2026-01-25T06:04:14.224171Z",
+     "shell.execute_reply": "2026-01-25T06:04:14.222645Z"
+    },
+    "papermill": {
+     "duration": 0.02854,
+     "end_time": "2026-01-25T06:04:14.226796",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:14.198256",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "df_final['Date']=pd.to_datetime(df_final['Date'])\n",
+    "df_final=df_final.set_index('Date',inplace=False)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "1bace5f5",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:14.240414Z",
+     "iopub.status.busy": "2026-01-25T06:04:14.240080Z",
+     "iopub.status.idle": "2026-01-25T06:04:14.261742Z",
+     "shell.execute_reply": "2026-01-25T06:04:14.260674Z"
+    },
+    "papermill": {
+     "duration": 0.031188,
+     "end_time": "2026-01-25T06:04:14.264058",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:14.232870",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>NSEI_date</th>\n",
+       "      <th>NSEI_close</th>\n",
+       "      <th>NSEI_open</th>\n",
+       "      <th>NSEI_high</th>\n",
+       "      <th>NSEI_low</th>\n",
+       "      <th>NSEI_volume</th>\n",
+       "      <th>RUT_Open</th>\n",
+       "      <th>RUT_High</th>\n",
+       "      <th>RUT_Low</th>\n",
+       "      <th>RUT_Close</th>\n",
+       "      <th>...</th>\n",
+       "      <th>HDFCBANK.NS_open</th>\n",
+       "      <th>HDFCBANK.NS_high</th>\n",
+       "      <th>HDFCBANK.NS_low</th>\n",
+       "      <th>HDFCBANK.NS_volume</th>\n",
+       "      <th>BSESN_Open</th>\n",
+       "      <th>BSESN_High</th>\n",
+       "      <th>BSESN_Low</th>\n",
+       "      <th>BSESN_Close</th>\n",
+       "      <th>BSESN_Adj Close</th>\n",
+       "      <th>BSESN_Volume</th>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>Date</th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>1950-01-03</th>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>...</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1950-01-04</th>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>...</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1950-01-05</th>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>...</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1950-01-06</th>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>...</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1950-01-09</th>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>...</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>NaN</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>5 rows × 36 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "           NSEI_date  NSEI_close  NSEI_open  NSEI_high  NSEI_low  NSEI_volume  \\\n",
+       "Date                                                                            \n",
+       "1950-01-03       NaN         NaN        NaN        NaN       NaN          NaN   \n",
+       "1950-01-04       NaN         NaN        NaN        NaN       NaN          NaN   \n",
+       "1950-01-05       NaN         NaN        NaN        NaN       NaN          NaN   \n",
+       "1950-01-06       NaN         NaN        NaN        NaN       NaN          NaN   \n",
+       "1950-01-09       NaN         NaN        NaN        NaN       NaN          NaN   \n",
+       "\n",
+       "            RUT_Open  RUT_High  RUT_Low  RUT_Close  ...  HDFCBANK.NS_open  \\\n",
+       "Date                                                ...                     \n",
+       "1950-01-03       NaN       NaN      NaN        NaN  ...               NaN   \n",
+       "1950-01-04       NaN       NaN      NaN        NaN  ...               NaN   \n",
+       "1950-01-05       NaN       NaN      NaN        NaN  ...               NaN   \n",
+       "1950-01-06       NaN       NaN      NaN        NaN  ...               NaN   \n",
+       "1950-01-09       NaN       NaN      NaN        NaN  ...               NaN   \n",
+       "\n",
+       "            HDFCBANK.NS_high  HDFCBANK.NS_low  HDFCBANK.NS_volume  BSESN_Open  \\\n",
+       "Date                                                                            \n",
+       "1950-01-03               NaN              NaN                 NaN         NaN   \n",
+       "1950-01-04               NaN              NaN                 NaN         NaN   \n",
+       "1950-01-05               NaN              NaN                 NaN         NaN   \n",
+       "1950-01-06               NaN              NaN                 NaN         NaN   \n",
+       "1950-01-09               NaN              NaN                 NaN         NaN   \n",
+       "\n",
+       "            BSESN_High  BSESN_Low  BSESN_Close  BSESN_Adj Close  BSESN_Volume  \n",
+       "Date                                                                           \n",
+       "1950-01-03         NaN        NaN          NaN              NaN           NaN  \n",
+       "1950-01-04         NaN        NaN          NaN              NaN           NaN  \n",
+       "1950-01-05         NaN        NaN          NaN              NaN           NaN  \n",
+       "1950-01-06         NaN        NaN          NaN              NaN           NaN  \n",
+       "1950-01-09         NaN        NaN          NaN              NaN           NaN  \n",
+       "\n",
+       "[5 rows x 36 columns]"
+      ]
+     },
+     "execution_count": 19,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df_final.head(5)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "0ab3f454",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:14.277357Z",
+     "iopub.status.busy": "2026-01-25T06:04:14.277043Z",
+     "iopub.status.idle": "2026-01-25T06:04:14.283836Z",
+     "shell.execute_reply": "2026-01-25T06:04:14.282852Z"
+    },
+    "papermill": {
+     "duration": 0.016005,
+     "end_time": "2026-01-25T06:04:14.285983",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:14.269978",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "Index(['NSEI_date', 'NSEI_close', 'NSEI_open', 'NSEI_high', 'NSEI_low',\n",
+       "       'NSEI_volume', 'RUT_Open', 'RUT_High', 'RUT_Low', 'RUT_Close',\n",
+       "       'RUT_Adj Close', 'RUT_Volume', 'GSPC_Open', 'GSPC_High', 'GSPC_Low',\n",
+       "       'GSPC_Close', 'GSPC_Adj Close', 'GSPC_Volume', 'IXIC_Open', 'IXIC_High',\n",
+       "       'IXIC_Low', 'IXIC_Close', 'IXIC_Adj Close', 'IXIC_Volume',\n",
+       "       'HDFCBANK.NS_date', 'HDFCBANK.NS_close', 'HDFCBANK.NS_open',\n",
+       "       'HDFCBANK.NS_high', 'HDFCBANK.NS_low', 'HDFCBANK.NS_volume',\n",
+       "       'BSESN_Open', 'BSESN_High', 'BSESN_Low', 'BSESN_Close',\n",
+       "       'BSESN_Adj Close', 'BSESN_Volume'],\n",
+       "      dtype='object')"
+      ]
+     },
+     "execution_count": 20,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df_final.columns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "ac9e38d7",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:14.299583Z",
+     "iopub.status.busy": "2026-01-25T06:04:14.299193Z",
+     "iopub.status.idle": "2026-01-25T06:04:15.026961Z",
+     "shell.execute_reply": "2026-01-25T06:04:15.025773Z"
+    },
+    "papermill": {
+     "duration": 0.737388,
+     "end_time": "2026-01-25T06:04:15.029390",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:14.292002",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "df_final.to_csv('Merged_data.csv')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "8dfe0c35",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T06:04:15.043843Z",
+     "iopub.status.busy": "2026-01-25T06:04:15.043451Z",
+     "iopub.status.idle": "2026-01-25T06:04:18.397696Z",
+     "shell.execute_reply": "2026-01-25T06:04:18.396348Z"
+    },
+    "papermill": {
+     "duration": 3.364543,
+     "end_time": "2026-01-25T06:04:18.400039",
+     "exception": false,
+     "start_time": "2026-01-25T06:04:15.035496",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Copying files:\n",
+      "  ✓ Merged_data.csv\n",
+      "  ✓ NSEI.csv\n",
+      "  ✓ RUT.csv\n",
+      "  ✓ GSPC.csv\n",
+      "  ✓ IXIC.csv\n",
+      "  ✓ HDFCBANK.NS.csv\n",
+      "  ✓ BSESN.csv\n",
+      "\n",
+      "Copying folders:\n",
+      "\n",
+      "✅ Success! https://github.com/Zalanemoj/General/tree/main/Outputs_Data-Cleaning-Index\n"
+     ]
+    }
+   ],
+   "source": [
+    "import os\n",
+    "import glob\n",
+    "import subprocess\n",
+    "import shutil\n",
+    "from datetime import datetime\n",
+    "from kaggle_secrets import UserSecretsClient\n",
+    "\n",
+    "GITHUB_USERNAME = \"Zalanemoj\"\n",
+    "GITHUB_REPO = \"General\"\n",
+    "GITHUB_EMAIL = \"zalanemoj777@gmail.com\"\n",
+    "GITHUB_DIR = \"Outputs_Data-Cleaning-Index\"\n",
+    "BRANCH = \"main\"\n",
+    "\n",
+    "FILES_TO_PUSH = [\"*.csv\", \"*.png\", \"*.jpg\", \"*.json\",\"*.pkl\"]\n",
+    "FOLDERS_TO_PUSH = [\"*\"]\n",
+    "\n",
+    "TOKEN = UserSecretsClient().get_secret(\"GITHUB_TOKEN\")\n",
+    "REPO_URL = f\"https://{TOKEN}@github.com/{GITHUB_USERNAME}/{GITHUB_REPO}.git\"\n",
+    "\n",
+    "source = \"/kaggle/working\"\n",
+    "temp = \"/kaggle/working/git_temp\"\n",
+    "\n",
+    "if os.path.exists(temp):\n",
+    "    shutil.rmtree(temp)\n",
+    "os.makedirs(temp)\n",
+    "\n",
+    "os.chdir(temp)\n",
+    "subprocess.run([\"git\", \"init\"], capture_output=True)\n",
+    "subprocess.run([\"git\", \"config\", \"user.email\", GITHUB_EMAIL], capture_output=True)\n",
+    "subprocess.run([\"git\", \"config\", \"user.name\", GITHUB_USERNAME], capture_output=True)\n",
+    "subprocess.run([\"git\", \"remote\", \"add\", \"origin\", REPO_URL], capture_output=True)\n",
+    "subprocess.run([\"git\", \"pull\", \"origin\", BRANCH], capture_output=True)\n",
+    "\n",
+    "target = os.path.join(temp, GITHUB_DIR)\n",
+    "os.makedirs(target, exist_ok=True)\n",
+    "IGNORE_FOLDERS = [\"git_temp\", \".virtual_documents\", \".git\"]\n",
+    "os.chdir(source)\n",
+    "\n",
+    "print(\"Copying files:\")\n",
+    "for pattern in FILES_TO_PUSH:\n",
+    "    for item in glob.glob(pattern):\n",
+    "        shutil.copy2(item, target)\n",
+    "        print(f\"  ✓ {item}\")\n",
+    "\n",
+    "print(\"\\nCopying folders:\")\n",
+    "for pattern in FOLDERS_TO_PUSH:\n",
+    "    for folder in glob.glob(pattern):\n",
+    "        if any(ignored in folder for ignored in IGNORE_FOLDERS):\n",
+    "            continue\n",
+    "\n",
+    "        if os.path.isdir(folder):\n",
+    "            dest = os.path.join(target, folder)\n",
+    "            if os.path.exists(dest):\n",
+    "                shutil.rmtree(dest)\n",
+    "            shutil.copytree(folder, dest)\n",
+    "            print(f\"  ✓ {folder}/\")\n",
+    "\n",
+    "os.chdir(temp)\n",
+    "subprocess.run([\"git\", \"add\", \"-A\"], capture_output=True)\n",
+    "subprocess.run([\"git\", \"commit\", \"-m\", f\"Update {datetime.now().strftime('%Y-%m-%d %H:%M')}\"], capture_output=True)\n",
+    "subprocess.run([\"git\", \"branch\", \"-M\", BRANCH], capture_output=True)\n",
+    "\n",
+    "result = subprocess.run([\"git\", \"push\", \"-f\", \"origin\", BRANCH], capture_output=True, text=True)\n",
+    "\n",
+    "if result.returncode == 0:\n",
+    "    print(f\"\\n✅ Success! https://github.com/{GITHUB_USERNAME}/{GITHUB_REPO}/tree/{BRANCH}/{GITHUB_DIR}\")\n",
+    "else:\n",
+    "    print(f\"\\n❌ Failed: {result.stderr}\")\n",
+    "\n",
+    "os.chdir(source)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kaggle": {
+   "accelerator": "none",
+   "dataSources": [
+    {
+     "sourceId": 291300003,
+     "sourceType": "kernelVersion"
+    }
+   ],
+   "dockerImageVersionId": 31259,
+   "isGpuEnabled": false,
+   "isInternetEnabled": true,
+   "language": "python",
+   "sourceType": "notebook"
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.12"
+  },
+  "papermill": {
+   "default_parameters": {},
+   "duration": 11.38495,
+   "end_time": "2026-01-25T06:04:18.927747",
+   "environment_variables": {},
+   "exception": null,
+   "input_path": "__notebook__.ipynb",
+   "output_path": "__notebook__.ipynb",
+   "parameters": {},
+   "start_time": "2026-01-25T06:04:07.542797",
+   "version": "2.6.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
