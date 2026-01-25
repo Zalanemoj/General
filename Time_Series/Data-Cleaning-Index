@@ -2,13 +2,13 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "02ceec62",
+   "id": "66e370cf",
    "metadata": {
     "papermill": {
-     "duration": 0.005346,
-     "end_time": "2026-01-25T06:04:11.223519",
+     "duration": 0.005785,
+     "end_time": "2026-01-25T09:09:11.729386",
      "exception": false,
-     "start_time": "2026-01-25T06:04:11.218173",
+     "start_time": "2026-01-25T09:09:11.723601",
      "status": "completed"
     },
     "tags": []
@@ -20,21 +20,21 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "0f19c477",
+   "id": "46ef8948",
    "metadata": {
     "_cell_guid": "b1076dfc-b9ad-4769-8c92-a6c4dae69d19",
     "_uuid": "8f2839f25d086af736a60e9eeb907d3b93b6e0e5",
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:11.234325Z",
-     "iopub.status.busy": "2026-01-25T06:04:11.233973Z",
-     "iopub.status.idle": "2026-01-25T06:04:12.708763Z",
-     "shell.execute_reply": "2026-01-25T06:04:12.707684Z"
+     "iopub.execute_input": "2026-01-25T09:09:11.741318Z",
+     "iopub.status.busy": "2026-01-25T09:09:11.740318Z",
+     "iopub.status.idle": "2026-01-25T09:09:13.416606Z",
+     "shell.execute_reply": "2026-01-25T09:09:13.415387Z"
     },
     "papermill": {
-     "duration": 1.483192,
-     "end_time": "2026-01-25T06:04:12.711208",
+     "duration": 1.684368,
+     "end_time": "2026-01-25T09:09:13.418780",
      "exception": false,
-     "start_time": "2026-01-25T06:04:11.228016",
+     "start_time": "2026-01-25T09:09:11.734412",
      "status": "completed"
     },
     "tags": []
@@ -54,19 +54,19 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "65196a6b",
+   "id": "6a05448f",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:12.722765Z",
-     "iopub.status.busy": "2026-01-25T06:04:12.721691Z",
-     "iopub.status.idle": "2026-01-25T06:04:12.777451Z",
-     "shell.execute_reply": "2026-01-25T06:04:12.776420Z"
+     "iopub.execute_input": "2026-01-25T09:09:13.430522Z",
+     "iopub.status.busy": "2026-01-25T09:09:13.429948Z",
+     "iopub.status.idle": "2026-01-25T09:09:13.481816Z",
+     "shell.execute_reply": "2026-01-25T09:09:13.479970Z"
     },
     "papermill": {
-     "duration": 0.064098,
-     "end_time": "2026-01-25T06:04:12.779782",
+     "duration": 0.060841,
+     "end_time": "2026-01-25T09:09:13.484403",
      "exception": false,
-     "start_time": "2026-01-25T06:04:12.715684",
+     "start_time": "2026-01-25T09:09:13.423562",
      "status": "completed"
     },
     "tags": []
@@ -79,19 +79,19 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "beae2b9a",
+   "id": "84937e12",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:12.791537Z",
-     "iopub.status.busy": "2026-01-25T06:04:12.790192Z",
-     "iopub.status.idle": "2026-01-25T06:04:12.822422Z",
-     "shell.execute_reply": "2026-01-25T06:04:12.821340Z"
+     "iopub.execute_input": "2026-01-25T09:09:13.498739Z",
+     "iopub.status.busy": "2026-01-25T09:09:13.497623Z",
+     "iopub.status.idle": "2026-01-25T09:09:13.530738Z",
+     "shell.execute_reply": "2026-01-25T09:09:13.529279Z"
     },
     "papermill": {
-     "duration": 0.040369,
-     "end_time": "2026-01-25T06:04:12.824761",
+     "duration": 0.043614,
+     "end_time": "2026-01-25T09:09:13.533110",
      "exception": false,
-     "start_time": "2026-01-25T06:04:12.784392",
+     "start_time": "2026-01-25T09:09:13.489496",
      "status": "completed"
     },
     "tags": []
@@ -202,13 +202,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "7815a806",
+   "id": "16254e8c",
    "metadata": {
     "papermill": {
-     "duration": 0.004564,
-     "end_time": "2026-01-25T06:04:12.834094",
+     "duration": 0.004632,
+     "end_time": "2026-01-25T09:09:13.542430",
      "exception": false,
-     "start_time": "2026-01-25T06:04:12.829530",
+     "start_time": "2026-01-25T09:09:13.537798",
      "status": "completed"
     },
     "tags": []
@@ -220,19 +220,19 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "1cfcbf1f",
+   "id": "b7e347e7",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:12.844850Z",
-     "iopub.status.busy": "2026-01-25T06:04:12.844473Z",
-     "iopub.status.idle": "2026-01-25T06:04:12.850496Z",
-     "shell.execute_reply": "2026-01-25T06:04:12.849343Z"
+     "iopub.execute_input": "2026-01-25T09:09:13.554640Z",
+     "iopub.status.busy": "2026-01-25T09:09:13.554263Z",
+     "iopub.status.idle": "2026-01-25T09:09:13.562442Z",
+     "shell.execute_reply": "2026-01-25T09:09:13.561339Z"
     },
     "papermill": {
-     "duration": 0.014344,
-     "end_time": "2026-01-25T06:04:12.852881",
+     "duration": 0.017047,
+     "end_time": "2026-01-25T09:09:13.564698",
      "exception": false,
-     "start_time": "2026-01-25T06:04:12.838537",
+     "start_time": "2026-01-25T09:09:13.547651",
      "status": "completed"
     },
     "tags": []
@@ -245,19 +245,19 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "92bff560",
+   "id": "f2b2be30",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:12.864435Z",
-     "iopub.status.busy": "2026-01-25T06:04:12.863503Z",
-     "iopub.status.idle": "2026-01-25T06:04:12.870987Z",
-     "shell.execute_reply": "2026-01-25T06:04:12.869960Z"
+     "iopub.execute_input": "2026-01-25T09:09:13.577390Z",
+     "iopub.status.busy": "2026-01-25T09:09:13.576820Z",
+     "iopub.status.idle": "2026-01-25T09:09:13.582612Z",
+     "shell.execute_reply": "2026-01-25T09:09:13.581363Z"
     },
     "papermill": {
-     "duration": 0.015791,
-     "end_time": "2026-01-25T06:04:12.873298",
+     "duration": 0.014945,
+     "end_time": "2026-01-25T09:09:13.584810",
      "exception": false,
-     "start_time": "2026-01-25T06:04:12.857507",
+     "start_time": "2026-01-25T09:09:13.569865",
      "status": "completed"
     },
     "tags": []
@@ -271,19 +271,19 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "id": "b40991c8",
+   "id": "0b03ce20",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:12.884512Z",
-     "iopub.status.busy": "2026-01-25T06:04:12.884141Z",
-     "iopub.status.idle": "2026-01-25T06:04:12.889905Z",
-     "shell.execute_reply": "2026-01-25T06:04:12.888800Z"
+     "iopub.execute_input": "2026-01-25T09:09:13.596524Z",
+     "iopub.status.busy": "2026-01-25T09:09:13.596068Z",
+     "iopub.status.idle": "2026-01-25T09:09:13.602195Z",
+     "shell.execute_reply": "2026-01-25T09:09:13.601094Z"
     },
     "papermill": {
-     "duration": 0.014301,
-     "end_time": "2026-01-25T06:04:12.892259",
+     "duration": 0.014078,
+     "end_time": "2026-01-25T09:09:13.604087",
      "exception": false,
-     "start_time": "2026-01-25T06:04:12.877958",
+     "start_time": "2026-01-25T09:09:13.590009",
      "status": "completed"
     },
     "tags": []
@@ -296,19 +296,19 @@
   {
    "cell_type": "code",
    "execution_count": 7,
-   "id": "7b876811",
+   "id": "44ffdec7",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:12.903450Z",
-     "iopub.status.busy": "2026-01-25T06:04:12.903107Z",
-     "iopub.status.idle": "2026-01-25T06:04:12.916336Z",
-     "shell.execute_reply": "2026-01-25T06:04:12.915023Z"
+     "iopub.execute_input": "2026-01-25T09:09:13.616261Z",
+     "iopub.status.busy": "2026-01-25T09:09:13.615119Z",
+     "iopub.status.idle": "2026-01-25T09:09:13.628779Z",
+     "shell.execute_reply": "2026-01-25T09:09:13.627613Z"
     },
     "papermill": {
-     "duration": 0.021511,
-     "end_time": "2026-01-25T06:04:12.918458",
+     "duration": 0.021913,
+     "end_time": "2026-01-25T09:09:13.630778",
      "exception": false,
-     "start_time": "2026-01-25T06:04:12.896947",
+     "start_time": "2026-01-25T09:09:13.608865",
      "status": "completed"
     },
     "tags": []
@@ -427,19 +427,19 @@
   {
    "cell_type": "code",
    "execution_count": 8,
-   "id": "62299d01",
+   "id": "3169269b",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:12.929561Z",
-     "iopub.status.busy": "2026-01-25T06:04:12.929211Z",
-     "iopub.status.idle": "2026-01-25T06:04:12.937930Z",
-     "shell.execute_reply": "2026-01-25T06:04:12.936377Z"
+     "iopub.execute_input": "2026-01-25T09:09:13.644060Z",
+     "iopub.status.busy": "2026-01-25T09:09:13.642839Z",
+     "iopub.status.idle": "2026-01-25T09:09:13.652465Z",
+     "shell.execute_reply": "2026-01-25T09:09:13.651435Z"
     },
     "papermill": {
-     "duration": 0.017055,
-     "end_time": "2026-01-25T06:04:12.940332",
+     "duration": 0.0181,
+     "end_time": "2026-01-25T09:09:13.654683",
      "exception": false,
-     "start_time": "2026-01-25T06:04:12.923277",
+     "start_time": "2026-01-25T09:09:13.636583",
      "status": "completed"
     },
     "tags": []
@@ -453,19 +453,19 @@
   {
    "cell_type": "code",
    "execution_count": 9,
-   "id": "44e25440",
+   "id": "d5e54fe1",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:12.952642Z",
-     "iopub.status.busy": "2026-01-25T06:04:12.951147Z",
-     "iopub.status.idle": "2026-01-25T06:04:12.957468Z",
-     "shell.execute_reply": "2026-01-25T06:04:12.956636Z"
+     "iopub.execute_input": "2026-01-25T09:09:13.666344Z",
+     "iopub.status.busy": "2026-01-25T09:09:13.665935Z",
+     "iopub.status.idle": "2026-01-25T09:09:13.672034Z",
+     "shell.execute_reply": "2026-01-25T09:09:13.670747Z"
     },
     "papermill": {
-     "duration": 0.014572,
-     "end_time": "2026-01-25T06:04:12.959712",
+     "duration": 0.014619,
+     "end_time": "2026-01-25T09:09:13.674256",
      "exception": false,
-     "start_time": "2026-01-25T06:04:12.945140",
+     "start_time": "2026-01-25T09:09:13.659637",
      "status": "completed"
     },
     "tags": []
@@ -486,19 +486,19 @@
   {
    "cell_type": "code",
    "execution_count": 10,
-   "id": "195a94bc",
+   "id": "162f7c12",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:12.971481Z",
-     "iopub.status.busy": "2026-01-25T06:04:12.970722Z",
-     "iopub.status.idle": "2026-01-25T06:04:12.977071Z",
-     "shell.execute_reply": "2026-01-25T06:04:12.975977Z"
+     "iopub.execute_input": "2026-01-25T09:09:13.686493Z",
+     "iopub.status.busy": "2026-01-25T09:09:13.685978Z",
+     "iopub.status.idle": "2026-01-25T09:09:13.692417Z",
+     "shell.execute_reply": "2026-01-25T09:09:13.690938Z"
     },
     "papermill": {
-     "duration": 0.01455,
-     "end_time": "2026-01-25T06:04:12.979168",
+     "duration": 0.015641,
+     "end_time": "2026-01-25T09:09:13.695118",
      "exception": false,
-     "start_time": "2026-01-25T06:04:12.964618",
+     "start_time": "2026-01-25T09:09:13.679477",
      "status": "completed"
     },
     "tags": []
@@ -514,19 +514,19 @@
   {
    "cell_type": "code",
    "execution_count": 11,
-   "id": "629a3f91",
+   "id": "bf4fdba6",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:12.991504Z",
-     "iopub.status.busy": "2026-01-25T06:04:12.991110Z",
-     "iopub.status.idle": "2026-01-25T06:04:12.996509Z",
-     "shell.execute_reply": "2026-01-25T06:04:12.995457Z"
+     "iopub.execute_input": "2026-01-25T09:09:13.707418Z",
+     "iopub.status.busy": "2026-01-25T09:09:13.706926Z",
+     "iopub.status.idle": "2026-01-25T09:09:13.713573Z",
+     "shell.execute_reply": "2026-01-25T09:09:13.712018Z"
     },
     "papermill": {
-     "duration": 0.013944,
-     "end_time": "2026-01-25T06:04:12.998779",
+     "duration": 0.015399,
+     "end_time": "2026-01-25T09:09:13.715990",
      "exception": false,
-     "start_time": "2026-01-25T06:04:12.984835",
+     "start_time": "2026-01-25T09:09:13.700591",
      "status": "completed"
     },
     "tags": []
@@ -547,19 +547,19 @@
   {
    "cell_type": "code",
    "execution_count": 12,
-   "id": "c4ed0626",
+   "id": "1cc37069",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:13.010775Z",
-     "iopub.status.busy": "2026-01-25T06:04:13.009940Z",
-     "iopub.status.idle": "2026-01-25T06:04:13.015926Z",
-     "shell.execute_reply": "2026-01-25T06:04:13.014645Z"
+     "iopub.execute_input": "2026-01-25T09:09:13.728251Z",
+     "iopub.status.busy": "2026-01-25T09:09:13.727434Z",
+     "iopub.status.idle": "2026-01-25T09:09:13.733839Z",
+     "shell.execute_reply": "2026-01-25T09:09:13.732665Z"
     },
     "papermill": {
-     "duration": 0.014395,
-     "end_time": "2026-01-25T06:04:13.018186",
+     "duration": 0.014967,
+     "end_time": "2026-01-25T09:09:13.736103",
      "exception": false,
-     "start_time": "2026-01-25T06:04:13.003791",
+     "start_time": "2026-01-25T09:09:13.721136",
      "status": "completed"
     },
     "tags": []
@@ -573,19 +573,19 @@
   {
    "cell_type": "code",
    "execution_count": 13,
-   "id": "e4297997",
+   "id": "b292cbd0",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:13.029672Z",
-     "iopub.status.busy": "2026-01-25T06:04:13.029308Z",
-     "iopub.status.idle": "2026-01-25T06:04:13.714949Z",
-     "shell.execute_reply": "2026-01-25T06:04:13.713796Z"
+     "iopub.execute_input": "2026-01-25T09:09:13.748513Z",
+     "iopub.status.busy": "2026-01-25T09:09:13.747443Z",
+     "iopub.status.idle": "2026-01-25T09:09:14.475321Z",
+     "shell.execute_reply": "2026-01-25T09:09:14.474113Z"
     },
     "papermill": {
-     "duration": 0.693971,
-     "end_time": "2026-01-25T06:04:13.717185",
+     "duration": 0.736555,
+     "end_time": "2026-01-25T09:09:14.477686",
      "exception": false,
-     "start_time": "2026-01-25T06:04:13.023214",
+     "start_time": "2026-01-25T09:09:13.741131",
      "status": "completed"
     },
     "tags": []
@@ -607,19 +607,19 @@
   {
    "cell_type": "code",
    "execution_count": 14,
-   "id": "db8437b0",
+   "id": "023e79ee",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:13.729033Z",
-     "iopub.status.busy": "2026-01-25T06:04:13.728654Z",
-     "iopub.status.idle": "2026-01-25T06:04:13.742241Z",
-     "shell.execute_reply": "2026-01-25T06:04:13.741201Z"
+     "iopub.execute_input": "2026-01-25T09:09:14.489104Z",
+     "iopub.status.busy": "2026-01-25T09:09:14.488750Z",
+     "iopub.status.idle": "2026-01-25T09:09:14.507017Z",
+     "shell.execute_reply": "2026-01-25T09:09:14.505891Z"
     },
     "papermill": {
-     "duration": 0.022068,
-     "end_time": "2026-01-25T06:04:13.744534",
+     "duration": 0.026788,
+     "end_time": "2026-01-25T09:09:14.509417",
      "exception": false,
-     "start_time": "2026-01-25T06:04:13.722466",
+     "start_time": "2026-01-25T09:09:14.482629",
      "status": "completed"
     },
     "tags": []
@@ -632,19 +632,19 @@
   {
    "cell_type": "code",
    "execution_count": 15,
-   "id": "5a857818",
+   "id": "ecbecb19",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:13.756667Z",
-     "iopub.status.busy": "2026-01-25T06:04:13.756273Z",
-     "iopub.status.idle": "2026-01-25T06:04:13.769070Z",
-     "shell.execute_reply": "2026-01-25T06:04:13.767968Z"
+     "iopub.execute_input": "2026-01-25T09:09:14.521090Z",
+     "iopub.status.busy": "2026-01-25T09:09:14.520724Z",
+     "iopub.status.idle": "2026-01-25T09:09:14.533363Z",
+     "shell.execute_reply": "2026-01-25T09:09:14.532251Z"
     },
     "papermill": {
-     "duration": 0.02167,
-     "end_time": "2026-01-25T06:04:13.771385",
+     "duration": 0.021024,
+     "end_time": "2026-01-25T09:09:14.535534",
      "exception": false,
-     "start_time": "2026-01-25T06:04:13.749715",
+     "start_time": "2026-01-25T09:09:14.514510",
      "status": "completed"
     },
     "tags": []
@@ -762,13 +762,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "b189d681",
+   "id": "6c439739",
    "metadata": {
     "papermill": {
-     "duration": 0.005004,
-     "end_time": "2026-01-25T06:04:13.781666",
+     "duration": 0.005119,
+     "end_time": "2026-01-25T09:09:14.545861",
      "exception": false,
-     "start_time": "2026-01-25T06:04:13.776662",
+     "start_time": "2026-01-25T09:09:14.540742",
      "status": "completed"
     },
     "tags": []
@@ -780,19 +780,19 @@
   {
    "cell_type": "code",
    "execution_count": 16,
-   "id": "2d3e67e7",
+   "id": "61ae2a44",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:13.793594Z",
-     "iopub.status.busy": "2026-01-25T06:04:13.793211Z",
-     "iopub.status.idle": "2026-01-25T06:04:13.928381Z",
-     "shell.execute_reply": "2026-01-25T06:04:13.927089Z"
+     "iopub.execute_input": "2026-01-25T09:09:14.557924Z",
+     "iopub.status.busy": "2026-01-25T09:09:14.557294Z",
+     "iopub.status.idle": "2026-01-25T09:09:14.695128Z",
+     "shell.execute_reply": "2026-01-25T09:09:14.693787Z"
     },
     "papermill": {
-     "duration": 0.143998,
-     "end_time": "2026-01-25T06:04:13.930784",
+     "duration": 0.146747,
+     "end_time": "2026-01-25T09:09:14.697620",
      "exception": false,
-     "start_time": "2026-01-25T06:04:13.786786",
+     "start_time": "2026-01-25T09:09:14.550873",
      "status": "completed"
     },
     "tags": []
@@ -813,19 +813,102 @@
   {
    "cell_type": "code",
    "execution_count": 17,
-   "id": "250f8674",
+   "id": "ce030956",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:13.943429Z",
-     "iopub.status.busy": "2026-01-25T06:04:13.943003Z",
-     "iopub.status.idle": "2026-01-25T06:04:14.190210Z",
-     "shell.execute_reply": "2026-01-25T06:04:14.189121Z"
+     "iopub.execute_input": "2026-01-25T09:09:14.710017Z",
+     "iopub.status.busy": "2026-01-25T09:09:14.709523Z",
+     "iopub.status.idle": "2026-01-25T09:09:14.715464Z",
+     "shell.execute_reply": "2026-01-25T09:09:14.714124Z"
     },
     "papermill": {
-     "duration": 0.256293,
-     "end_time": "2026-01-25T06:04:14.192240",
+     "duration": 0.014976,
+     "end_time": "2026-01-25T09:09:14.717630",
      "exception": false,
-     "start_time": "2026-01-25T06:04:13.935947",
+     "start_time": "2026-01-25T09:09:14.702654",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "files = glob.glob('/kaggle/input/data-cleaning-historical/*.csv') "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "2f077205",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T09:09:14.730905Z",
+     "iopub.status.busy": "2026-01-25T09:09:14.729534Z",
+     "iopub.status.idle": "2026-01-25T09:09:14.735347Z",
+     "shell.execute_reply": "2026-01-25T09:09:14.734243Z"
+    },
+    "papermill": {
+     "duration": 0.014679,
+     "end_time": "2026-01-25T09:09:14.737437",
+     "exception": false,
+     "start_time": "2026-01-25T09:09:14.722758",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "files.remove('/kaggle/input/data-cleaning-historical/Cleaned_RELIANCE.NS_Max.csv')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "cc4ec594",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T09:09:14.749918Z",
+     "iopub.status.busy": "2026-01-25T09:09:14.749133Z",
+     "iopub.status.idle": "2026-01-25T09:09:14.755670Z",
+     "shell.execute_reply": "2026-01-25T09:09:14.754376Z"
+    },
+    "papermill": {
+     "duration": 0.015334,
+     "end_time": "2026-01-25T09:09:14.757940",
+     "exception": false,
+     "start_time": "2026-01-25T09:09:14.742606",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['/kaggle/input/data-cleaning-historical/Cleaned_NSEI_MAX.csv', '/kaggle/input/data-cleaning-historical/Cleaned_IXIC_Max.csv', '/kaggle/input/data-cleaning-historical/Cleaned_HDFCBANK.NS_MAX_NSE.csv', '/kaggle/input/data-cleaning-historical/Cleaned_GSPC_Max.csv', '/kaggle/input/data-cleaning-historical/Cleaned_BSESN_Max.csv', '/kaggle/input/data-cleaning-historical/Cleaned_RUT_Max.csv']\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(files)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "bcb7615a",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-25T09:09:14.769905Z",
+     "iopub.status.busy": "2026-01-25T09:09:14.769515Z",
+     "iopub.status.idle": "2026-01-25T09:09:15.637498Z",
+     "shell.execute_reply": "2026-01-25T09:09:15.636329Z"
+    },
+    "papermill": {
+     "duration": 0.876821,
+     "end_time": "2026-01-25T09:09:15.639808",
+     "exception": false,
+     "start_time": "2026-01-25T09:09:14.762987",
      "status": "completed"
     },
     "scrolled": true,
@@ -836,17 +919,17 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Found 6 files.\n",
-      "✅ Loaded /kaggle/working/NSEI.csv | Shape: (4520, 7)\n",
-      "✅ Loaded /kaggle/working/RUT.csv | Shape: (9654, 7)\n",
-      "✅ Loaded /kaggle/working/GSPC.csv | Shape: (19126, 7)\n",
-      "✅ Loaded /kaggle/working/IXIC.csv | Shape: (10392, 7)\n",
-      "✅ Loaded /kaggle/working/HDFCBANK.NS.csv | Shape: (7885, 7)\n",
-      "✅ Loaded /kaggle/working/BSESN.csv | Shape: (5531, 7)\n",
+      "Found 6 files. Processing...\n",
+      " Loaded Cleaned_NSEI_MAX | 4520 rows\n",
+      " Loaded Cleaned_IXIC_Max | 10392 rows\n",
+      " Loaded Cleaned_HDFCBANK | 7885 rows\n",
+      " Loaded Cleaned_GSPC_Max | 19126 rows\n",
+      " Loaded Cleaned_BSESN_Max | 5531 rows\n",
+      " Loaded Cleaned_RUT_Max | 9654 rows\n",
       "\n",
-      "Merging 6 DataFrames...\n",
-      "SUCCESS! Final Shape: (28286, 37)\n",
-      "Columns: ['Date', 'NSEI_date', 'NSEI_close', 'NSEI_open', 'NSEI_high', 'NSEI_low', 'NSEI_volume', 'RUT_Open', 'RUT_High', 'RUT_Low', 'RUT_Close', 'RUT_Adj Close', 'RUT_Volume', 'GSPC_Open', 'GSPC_High', 'GSPC_Low', 'GSPC_Close', 'GSPC_Adj Close', 'GSPC_Volume', 'IXIC_Open', 'IXIC_High', 'IXIC_Low', 'IXIC_Close', 'IXIC_Adj Close', 'IXIC_Volume', 'HDFCBANK.NS_date', 'HDFCBANK.NS_close', 'HDFCBANK.NS_open', 'HDFCBANK.NS_high', 'HDFCBANK.NS_low', 'HDFCBANK.NS_volume', 'BSESN_Open', 'BSESN_High', 'BSESN_Low', 'BSESN_Close', 'BSESN_Adj Close', 'BSESN_Volume']\n"
+      "Merge Complete!\n",
+      "Final Shape: (20950, 35)\n",
+      "Date Range: 1950-01-03 00:00:00 to 2026-01-09 00:00:00\n"
      ]
     },
     {
@@ -871,26 +954,26 @@
        "    <tr style=\"text-align: right;\">\n",
        "      <th></th>\n",
        "      <th>Date</th>\n",
-       "      <th>NSEI_date</th>\n",
-       "      <th>NSEI_close</th>\n",
-       "      <th>NSEI_open</th>\n",
-       "      <th>NSEI_high</th>\n",
-       "      <th>NSEI_low</th>\n",
-       "      <th>NSEI_volume</th>\n",
-       "      <th>RUT_Open</th>\n",
-       "      <th>RUT_High</th>\n",
-       "      <th>RUT_Low</th>\n",
+       "      <th>Cleaned_NSEI_MAX_Close</th>\n",
+       "      <th>Cleaned_NSEI_MAX_Open</th>\n",
+       "      <th>Cleaned_NSEI_MAX_High</th>\n",
+       "      <th>Cleaned_NSEI_MAX_Low</th>\n",
+       "      <th>Cleaned_NSEI_MAX_Volume</th>\n",
+       "      <th>Cleaned_IXIC_Max_Open</th>\n",
+       "      <th>Cleaned_IXIC_Max_High</th>\n",
+       "      <th>Cleaned_IXIC_Max_Low</th>\n",
+       "      <th>Cleaned_IXIC_Max_Close</th>\n",
        "      <th>...</th>\n",
-       "      <th>HDFCBANK.NS_open</th>\n",
-       "      <th>HDFCBANK.NS_high</th>\n",
-       "      <th>HDFCBANK.NS_low</th>\n",
-       "      <th>HDFCBANK.NS_volume</th>\n",
-       "      <th>BSESN_Open</th>\n",
-       "      <th>BSESN_High</th>\n",
-       "      <th>BSESN_Low</th>\n",
-       "      <th>BSESN_Close</th>\n",
-       "      <th>BSESN_Adj Close</th>\n",
-       "      <th>BSESN_Volume</th>\n",
+       "      <th>Cleaned_BSESN_Max_Low</th>\n",
+       "      <th>Cleaned_BSESN_Max_Close</th>\n",
+       "      <th>Cleaned_BSESN_Max_Adj Close</th>\n",
+       "      <th>Cleaned_BSESN_Max_Volume</th>\n",
+       "      <th>Cleaned_RUT_Max_Open</th>\n",
+       "      <th>Cleaned_RUT_Max_High</th>\n",
+       "      <th>Cleaned_RUT_Max_Low</th>\n",
+       "      <th>Cleaned_RUT_Max_Close</th>\n",
+       "      <th>Cleaned_RUT_Max_Adj Close</th>\n",
+       "      <th>Cleaned_RUT_Max_Volume</th>\n",
        "    </tr>\n",
        "  </thead>\n",
        "  <tbody>\n",
@@ -1016,39 +1099,67 @@
        "    </tr>\n",
        "  </tbody>\n",
        "</table>\n",
-       "<p>5 rows × 37 columns</p>\n",
+       "<p>5 rows × 35 columns</p>\n",
        "</div>"
       ],
       "text/plain": [
-       "        Date NSEI_date  NSEI_close  NSEI_open  NSEI_high  NSEI_low  \\\n",
-       "0 1950-01-03       NaN         NaN        NaN        NaN       NaN   \n",
-       "1 1950-01-04       NaN         NaN        NaN        NaN       NaN   \n",
-       "2 1950-01-05       NaN         NaN        NaN        NaN       NaN   \n",
-       "3 1950-01-06       NaN         NaN        NaN        NaN       NaN   \n",
-       "4 1950-01-09       NaN         NaN        NaN        NaN       NaN   \n",
+       "        Date  Cleaned_NSEI_MAX_Close  Cleaned_NSEI_MAX_Open  \\\n",
+       "0 1950-01-03                     NaN                    NaN   \n",
+       "1 1950-01-04                     NaN                    NaN   \n",
+       "2 1950-01-05                     NaN                    NaN   \n",
+       "3 1950-01-06                     NaN                    NaN   \n",
+       "4 1950-01-09                     NaN                    NaN   \n",
        "\n",
-       "   NSEI_volume  RUT_Open  RUT_High  RUT_Low  ...  HDFCBANK.NS_open  \\\n",
-       "0          NaN       NaN       NaN      NaN  ...               NaN   \n",
-       "1          NaN       NaN       NaN      NaN  ...               NaN   \n",
-       "2          NaN       NaN       NaN      NaN  ...               NaN   \n",
-       "3          NaN       NaN       NaN      NaN  ...               NaN   \n",
-       "4          NaN       NaN       NaN      NaN  ...               NaN   \n",
+       "   Cleaned_NSEI_MAX_High  Cleaned_NSEI_MAX_Low  Cleaned_NSEI_MAX_Volume  \\\n",
+       "0                    NaN                   NaN                      NaN   \n",
+       "1                    NaN                   NaN                      NaN   \n",
+       "2                    NaN                   NaN                      NaN   \n",
+       "3                    NaN                   NaN                      NaN   \n",
+       "4                    NaN                   NaN                      NaN   \n",
        "\n",
-       "   HDFCBANK.NS_high  HDFCBANK.NS_low  HDFCBANK.NS_volume  BSESN_Open  \\\n",
-       "0               NaN              NaN                 NaN         NaN   \n",
-       "1               NaN              NaN                 NaN         NaN   \n",
-       "2               NaN              NaN                 NaN         NaN   \n",
-       "3               NaN              NaN                 NaN         NaN   \n",
-       "4               NaN              NaN                 NaN         NaN   \n",
+       "   Cleaned_IXIC_Max_Open  Cleaned_IXIC_Max_High  Cleaned_IXIC_Max_Low  \\\n",
+       "0                    NaN                    NaN                   NaN   \n",
+       "1                    NaN                    NaN                   NaN   \n",
+       "2                    NaN                    NaN                   NaN   \n",
+       "3                    NaN                    NaN                   NaN   \n",
+       "4                    NaN                    NaN                   NaN   \n",
        "\n",
-       "   BSESN_High  BSESN_Low  BSESN_Close  BSESN_Adj Close  BSESN_Volume  \n",
-       "0         NaN        NaN          NaN              NaN           NaN  \n",
-       "1         NaN        NaN          NaN              NaN           NaN  \n",
-       "2         NaN        NaN          NaN              NaN           NaN  \n",
-       "3         NaN        NaN          NaN              NaN           NaN  \n",
-       "4         NaN        NaN          NaN              NaN           NaN  \n",
+       "   Cleaned_IXIC_Max_Close  ...  Cleaned_BSESN_Max_Low  \\\n",
+       "0                     NaN  ...                    NaN   \n",
+       "1                     NaN  ...                    NaN   \n",
+       "2                     NaN  ...                    NaN   \n",
+       "3                     NaN  ...                    NaN   \n",
+       "4                     NaN  ...                    NaN   \n",
        "\n",
-       "[5 rows x 37 columns]"
+       "   Cleaned_BSESN_Max_Close  Cleaned_BSESN_Max_Adj Close  \\\n",
+       "0                      NaN                          NaN   \n",
+       "1                      NaN                          NaN   \n",
+       "2                      NaN                          NaN   \n",
+       "3                      NaN                          NaN   \n",
+       "4                      NaN                          NaN   \n",
+       "\n",
+       "   Cleaned_BSESN_Max_Volume  Cleaned_RUT_Max_Open  Cleaned_RUT_Max_High  \\\n",
+       "0                       NaN                   NaN                   NaN   \n",
+       "1                       NaN                   NaN                   NaN   \n",
+       "2                       NaN                   NaN                   NaN   \n",
+       "3                       NaN                   NaN                   NaN   \n",
+       "4                       NaN                   NaN                   NaN   \n",
+       "\n",
+       "   Cleaned_RUT_Max_Low  Cleaned_RUT_Max_Close  Cleaned_RUT_Max_Adj Close  \\\n",
+       "0                  NaN                    NaN                        NaN   \n",
+       "1                  NaN                    NaN                        NaN   \n",
+       "2                  NaN                    NaN                        NaN   \n",
+       "3                  NaN                    NaN                        NaN   \n",
+       "4                  NaN                    NaN                        NaN   \n",
+       "\n",
+       "   Cleaned_RUT_Max_Volume  \n",
+       "0                     NaN  \n",
+       "1                     NaN  \n",
+       "2                     NaN  \n",
+       "3                     NaN  \n",
+       "4                     NaN  \n",
+       "\n",
+       "[5 rows x 35 columns]"
       ]
      },
      "metadata": {},
@@ -1056,55 +1167,71 @@
     }
    ],
    "source": [
-    "files = glob.glob('/kaggle/working/*.csv')\n",
-    "print(f\"Found {len(files)} files.\")\n",
+    "target_cols = ['Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']\n",
+    "\n",
     "all_dataframes = []\n",
+    "\n",
+    "print(f\"Found {len(files)} files. Processing...\")\n",
+    "\n",
     "for file in files:\n",
-    "    df = pd.read_csv(file, index_col=0)\n",
-    "    df = df.reset_index()\n",
-    "    date_found = False\n",
+    "    stock_name = os.path.basename(file).split('.')[0]\n",
+    "    df = pd.read_csv(file)\n",
+    "    date_col = None\n",
     "    for col in df.columns:\n",
-    "        if 'date' in col.lower() or 'index' in col.lower():\n",
-    "            df = df.rename(columns={col: 'Date'})\n",
-    "            date_found = True\n",
-    "            break\n",
-    "            \n",
-    "    if date_found:\n",
-    "        df['Date'] = pd.to_datetime(df['Date'])\n",
-    "        df = df.loc[:, ~df.columns.str.contains('Unnamed')]\n",
-    "        \n",
-    "        all_dataframes.append(df)\n",
-    "        print(f\"✅ Loaded {file} | Shape: {df.shape}\")\n",
+    "        if col.lower() in ['date', 'datetime', 'timestamp']:\n",
+    "            date_col = col\n",
+    "            break        \n",
+    "    if date_col:\n",
+    "        df = df.rename(columns={date_col: 'Date'})\n",
+    "        df['Date'] = pd.to_datetime(df['Date'], errors='coerce')\n",
     "    else:\n",
-    "        print(f\"⚠️ SKIPPING {file} (Could not identify Date column)\")\n",
-    "if len(all_dataframes) > 0:\n",
-    "    print(f\"\\nMerging {len(all_dataframes)} DataFrames...\")\n",
+    "        print(f\"⚠️ SKIPPING {stock_name}: No Date column found.\")\n",
+    "        continue\n",
+    "    new_names = {}\n",
+    "    for col in df.columns:\n",
+    "        if col == 'Date': continue\n",
+    "        for target in target_cols:\n",
+    "            if col.lower() == target.lower():\n",
+    "                new_names[col] = target\n",
+    "                break\n",
+    "    \n",
+    "    df = df.rename(columns=new_names)\n",
+    "    df = df.set_index('Date')\n",
+    "    valid_cols = [c for c in df.columns if c in target_cols]\n",
+    "    df = df[valid_cols]\n",
+    "    df = df.add_prefix(f\"{stock_name}_\")\n",
+    "    df = df.reset_index()\n",
+    "    all_dataframes.append(df)\n",
+    "    print(f\" Loaded {stock_name} | {len(df)} rows\")\n",
+    "if all_dataframes:\n",
     "    df_final = reduce(lambda left, right: pd.merge(left, right, on='Date', how='outer'), all_dataframes)\n",
     "    df_final = df_final.sort_values('Date').reset_index(drop=True)\n",
-    "    \n",
-    "    print(\"SUCCESS! Final Shape:\", df_final.shape)\n",
-    "    print(\"Columns:\", df_final.columns.tolist())\n",
+    "    print(\"\\nMerge Complete!\")\n",
+    "    print(f\"Final Shape: {df_final.shape}\")\n",
+    "    print(f\"Date Range: {df_final['Date'].min()} to {df_final['Date'].max()}\")\n",
     "    display(df_final.head())\n",
+    "\n",
+    "    df_final.to_csv('Merged_data.csv', index=False)\n",
     "else:\n",
-    "    print(\"❌ No DataFrames loaded.\")"
+    "    print(\" No valid files found to merge.\")"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
-   "id": "cc13e1c8",
+   "execution_count": 21,
+   "id": "9af54705",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:14.205960Z",
-     "iopub.status.busy": "2026-01-25T06:04:14.205560Z",
-     "iopub.status.idle": "2026-01-25T06:04:14.224171Z",
-     "shell.execute_reply": "2026-01-25T06:04:14.222645Z"
+     "iopub.execute_input": "2026-01-25T09:09:15.654662Z",
+     "iopub.status.busy": "2026-01-25T09:09:15.653715Z",
+     "iopub.status.idle": "2026-01-25T09:09:15.670572Z",
+     "shell.execute_reply": "2026-01-25T09:09:15.669643Z"
     },
     "papermill": {
-     "duration": 0.02854,
-     "end_time": "2026-01-25T06:04:14.226796",
+     "duration": 0.026102,
+     "end_time": "2026-01-25T09:09:15.672638",
      "exception": false,
-     "start_time": "2026-01-25T06:04:14.198256",
+     "start_time": "2026-01-25T09:09:15.646536",
      "status": "completed"
     },
     "tags": []
@@ -1117,20 +1244,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
-   "id": "1bace5f5",
+   "execution_count": 22,
+   "id": "791373ba",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:14.240414Z",
-     "iopub.status.busy": "2026-01-25T06:04:14.240080Z",
-     "iopub.status.idle": "2026-01-25T06:04:14.261742Z",
-     "shell.execute_reply": "2026-01-25T06:04:14.260674Z"
+     "iopub.execute_input": "2026-01-25T09:09:15.686571Z",
+     "iopub.status.busy": "2026-01-25T09:09:15.685829Z",
+     "iopub.status.idle": "2026-01-25T09:09:15.707117Z",
+     "shell.execute_reply": "2026-01-25T09:09:15.706117Z"
     },
     "papermill": {
-     "duration": 0.031188,
-     "end_time": "2026-01-25T06:04:14.264058",
+     "duration": 0.031119,
+     "end_time": "2026-01-25T09:09:15.709564",
      "exception": false,
-     "start_time": "2026-01-25T06:04:14.232870",
+     "start_time": "2026-01-25T09:09:15.678445",
      "status": "completed"
     },
     "tags": []
@@ -1157,27 +1284,27 @@
        "  <thead>\n",
        "    <tr style=\"text-align: right;\">\n",
        "      <th></th>\n",
-       "      <th>NSEI_date</th>\n",
-       "      <th>NSEI_close</th>\n",
-       "      <th>NSEI_open</th>\n",
-       "      <th>NSEI_high</th>\n",
-       "      <th>NSEI_low</th>\n",
-       "      <th>NSEI_volume</th>\n",
-       "      <th>RUT_Open</th>\n",
-       "      <th>RUT_High</th>\n",
-       "      <th>RUT_Low</th>\n",
-       "      <th>RUT_Close</th>\n",
+       "      <th>Cleaned_NSEI_MAX_Close</th>\n",
+       "      <th>Cleaned_NSEI_MAX_Open</th>\n",
+       "      <th>Cleaned_NSEI_MAX_High</th>\n",
+       "      <th>Cleaned_NSEI_MAX_Low</th>\n",
+       "      <th>Cleaned_NSEI_MAX_Volume</th>\n",
+       "      <th>Cleaned_IXIC_Max_Open</th>\n",
+       "      <th>Cleaned_IXIC_Max_High</th>\n",
+       "      <th>Cleaned_IXIC_Max_Low</th>\n",
+       "      <th>Cleaned_IXIC_Max_Close</th>\n",
+       "      <th>Cleaned_IXIC_Max_Adj Close</th>\n",
        "      <th>...</th>\n",
-       "      <th>HDFCBANK.NS_open</th>\n",
-       "      <th>HDFCBANK.NS_high</th>\n",
-       "      <th>HDFCBANK.NS_low</th>\n",
-       "      <th>HDFCBANK.NS_volume</th>\n",
-       "      <th>BSESN_Open</th>\n",
-       "      <th>BSESN_High</th>\n",
-       "      <th>BSESN_Low</th>\n",
-       "      <th>BSESN_Close</th>\n",
-       "      <th>BSESN_Adj Close</th>\n",
-       "      <th>BSESN_Volume</th>\n",
+       "      <th>Cleaned_BSESN_Max_Low</th>\n",
+       "      <th>Cleaned_BSESN_Max_Close</th>\n",
+       "      <th>Cleaned_BSESN_Max_Adj Close</th>\n",
+       "      <th>Cleaned_BSESN_Max_Volume</th>\n",
+       "      <th>Cleaned_RUT_Max_Open</th>\n",
+       "      <th>Cleaned_RUT_Max_High</th>\n",
+       "      <th>Cleaned_RUT_Max_Low</th>\n",
+       "      <th>Cleaned_RUT_Max_Close</th>\n",
+       "      <th>Cleaned_RUT_Max_Adj Close</th>\n",
+       "      <th>Cleaned_RUT_Max_Volume</th>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>Date</th>\n",
@@ -1327,46 +1454,94 @@
        "    </tr>\n",
        "  </tbody>\n",
        "</table>\n",
-       "<p>5 rows × 36 columns</p>\n",
+       "<p>5 rows × 34 columns</p>\n",
        "</div>"
       ],
       "text/plain": [
-       "           NSEI_date  NSEI_close  NSEI_open  NSEI_high  NSEI_low  NSEI_volume  \\\n",
-       "Date                                                                            \n",
-       "1950-01-03       NaN         NaN        NaN        NaN       NaN          NaN   \n",
-       "1950-01-04       NaN         NaN        NaN        NaN       NaN          NaN   \n",
-       "1950-01-05       NaN         NaN        NaN        NaN       NaN          NaN   \n",
-       "1950-01-06       NaN         NaN        NaN        NaN       NaN          NaN   \n",
-       "1950-01-09       NaN         NaN        NaN        NaN       NaN          NaN   \n",
+       "            Cleaned_NSEI_MAX_Close  Cleaned_NSEI_MAX_Open  \\\n",
+       "Date                                                        \n",
+       "1950-01-03                     NaN                    NaN   \n",
+       "1950-01-04                     NaN                    NaN   \n",
+       "1950-01-05                     NaN                    NaN   \n",
+       "1950-01-06                     NaN                    NaN   \n",
+       "1950-01-09                     NaN                    NaN   \n",
        "\n",
-       "            RUT_Open  RUT_High  RUT_Low  RUT_Close  ...  HDFCBANK.NS_open  \\\n",
-       "Date                                                ...                     \n",
-       "1950-01-03       NaN       NaN      NaN        NaN  ...               NaN   \n",
-       "1950-01-04       NaN       NaN      NaN        NaN  ...               NaN   \n",
-       "1950-01-05       NaN       NaN      NaN        NaN  ...               NaN   \n",
-       "1950-01-06       NaN       NaN      NaN        NaN  ...               NaN   \n",
-       "1950-01-09       NaN       NaN      NaN        NaN  ...               NaN   \n",
+       "            Cleaned_NSEI_MAX_High  Cleaned_NSEI_MAX_Low  \\\n",
+       "Date                                                      \n",
+       "1950-01-03                    NaN                   NaN   \n",
+       "1950-01-04                    NaN                   NaN   \n",
+       "1950-01-05                    NaN                   NaN   \n",
+       "1950-01-06                    NaN                   NaN   \n",
+       "1950-01-09                    NaN                   NaN   \n",
        "\n",
-       "            HDFCBANK.NS_high  HDFCBANK.NS_low  HDFCBANK.NS_volume  BSESN_Open  \\\n",
-       "Date                                                                            \n",
-       "1950-01-03               NaN              NaN                 NaN         NaN   \n",
-       "1950-01-04               NaN              NaN                 NaN         NaN   \n",
-       "1950-01-05               NaN              NaN                 NaN         NaN   \n",
-       "1950-01-06               NaN              NaN                 NaN         NaN   \n",
-       "1950-01-09               NaN              NaN                 NaN         NaN   \n",
+       "            Cleaned_NSEI_MAX_Volume  Cleaned_IXIC_Max_Open  \\\n",
+       "Date                                                         \n",
+       "1950-01-03                      NaN                    NaN   \n",
+       "1950-01-04                      NaN                    NaN   \n",
+       "1950-01-05                      NaN                    NaN   \n",
+       "1950-01-06                      NaN                    NaN   \n",
+       "1950-01-09                      NaN                    NaN   \n",
        "\n",
-       "            BSESN_High  BSESN_Low  BSESN_Close  BSESN_Adj Close  BSESN_Volume  \n",
-       "Date                                                                           \n",
-       "1950-01-03         NaN        NaN          NaN              NaN           NaN  \n",
-       "1950-01-04         NaN        NaN          NaN              NaN           NaN  \n",
-       "1950-01-05         NaN        NaN          NaN              NaN           NaN  \n",
-       "1950-01-06         NaN        NaN          NaN              NaN           NaN  \n",
-       "1950-01-09         NaN        NaN          NaN              NaN           NaN  \n",
+       "            Cleaned_IXIC_Max_High  Cleaned_IXIC_Max_Low  \\\n",
+       "Date                                                      \n",
+       "1950-01-03                    NaN                   NaN   \n",
+       "1950-01-04                    NaN                   NaN   \n",
+       "1950-01-05                    NaN                   NaN   \n",
+       "1950-01-06                    NaN                   NaN   \n",
+       "1950-01-09                    NaN                   NaN   \n",
        "\n",
-       "[5 rows x 36 columns]"
+       "            Cleaned_IXIC_Max_Close  Cleaned_IXIC_Max_Adj Close  ...  \\\n",
+       "Date                                                            ...   \n",
+       "1950-01-03                     NaN                         NaN  ...   \n",
+       "1950-01-04                     NaN                         NaN  ...   \n",
+       "1950-01-05                     NaN                         NaN  ...   \n",
+       "1950-01-06                     NaN                         NaN  ...   \n",
+       "1950-01-09                     NaN                         NaN  ...   \n",
+       "\n",
+       "            Cleaned_BSESN_Max_Low  Cleaned_BSESN_Max_Close  \\\n",
+       "Date                                                         \n",
+       "1950-01-03                    NaN                      NaN   \n",
+       "1950-01-04                    NaN                      NaN   \n",
+       "1950-01-05                    NaN                      NaN   \n",
+       "1950-01-06                    NaN                      NaN   \n",
+       "1950-01-09                    NaN                      NaN   \n",
+       "\n",
+       "            Cleaned_BSESN_Max_Adj Close  Cleaned_BSESN_Max_Volume  \\\n",
+       "Date                                                                \n",
+       "1950-01-03                          NaN                       NaN   \n",
+       "1950-01-04                          NaN                       NaN   \n",
+       "1950-01-05                          NaN                       NaN   \n",
+       "1950-01-06                          NaN                       NaN   \n",
+       "1950-01-09                          NaN                       NaN   \n",
+       "\n",
+       "            Cleaned_RUT_Max_Open  Cleaned_RUT_Max_High  Cleaned_RUT_Max_Low  \\\n",
+       "Date                                                                          \n",
+       "1950-01-03                   NaN                   NaN                  NaN   \n",
+       "1950-01-04                   NaN                   NaN                  NaN   \n",
+       "1950-01-05                   NaN                   NaN                  NaN   \n",
+       "1950-01-06                   NaN                   NaN                  NaN   \n",
+       "1950-01-09                   NaN                   NaN                  NaN   \n",
+       "\n",
+       "            Cleaned_RUT_Max_Close  Cleaned_RUT_Max_Adj Close  \\\n",
+       "Date                                                           \n",
+       "1950-01-03                    NaN                        NaN   \n",
+       "1950-01-04                    NaN                        NaN   \n",
+       "1950-01-05                    NaN                        NaN   \n",
+       "1950-01-06                    NaN                        NaN   \n",
+       "1950-01-09                    NaN                        NaN   \n",
+       "\n",
+       "            Cleaned_RUT_Max_Volume  \n",
+       "Date                                \n",
+       "1950-01-03                     NaN  \n",
+       "1950-01-04                     NaN  \n",
+       "1950-01-05                     NaN  \n",
+       "1950-01-06                     NaN  \n",
+       "1950-01-09                     NaN  \n",
+       "\n",
+       "[5 rows x 34 columns]"
       ]
      },
-     "execution_count": 19,
+     "execution_count": 22,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1377,20 +1552,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 20,
-   "id": "0ab3f454",
+   "execution_count": 23,
+   "id": "2a6bd5e2",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:14.277357Z",
-     "iopub.status.busy": "2026-01-25T06:04:14.277043Z",
-     "iopub.status.idle": "2026-01-25T06:04:14.283836Z",
-     "shell.execute_reply": "2026-01-25T06:04:14.282852Z"
+     "iopub.execute_input": "2026-01-25T09:09:15.724379Z",
+     "iopub.status.busy": "2026-01-25T09:09:15.723030Z",
+     "iopub.status.idle": "2026-01-25T09:09:15.730587Z",
+     "shell.execute_reply": "2026-01-25T09:09:15.729581Z"
     },
     "papermill": {
-     "duration": 0.016005,
-     "end_time": "2026-01-25T06:04:14.285983",
+     "duration": 0.017012,
+     "end_time": "2026-01-25T09:09:15.732624",
      "exception": false,
-     "start_time": "2026-01-25T06:04:14.269978",
+     "start_time": "2026-01-25T09:09:15.715612",
      "status": "completed"
     },
     "tags": []
@@ -1399,19 +1574,27 @@
     {
      "data": {
       "text/plain": [
-       "Index(['NSEI_date', 'NSEI_close', 'NSEI_open', 'NSEI_high', 'NSEI_low',\n",
-       "       'NSEI_volume', 'RUT_Open', 'RUT_High', 'RUT_Low', 'RUT_Close',\n",
-       "       'RUT_Adj Close', 'RUT_Volume', 'GSPC_Open', 'GSPC_High', 'GSPC_Low',\n",
-       "       'GSPC_Close', 'GSPC_Adj Close', 'GSPC_Volume', 'IXIC_Open', 'IXIC_High',\n",
-       "       'IXIC_Low', 'IXIC_Close', 'IXIC_Adj Close', 'IXIC_Volume',\n",
-       "       'HDFCBANK.NS_date', 'HDFCBANK.NS_close', 'HDFCBANK.NS_open',\n",
-       "       'HDFCBANK.NS_high', 'HDFCBANK.NS_low', 'HDFCBANK.NS_volume',\n",
-       "       'BSESN_Open', 'BSESN_High', 'BSESN_Low', 'BSESN_Close',\n",
-       "       'BSESN_Adj Close', 'BSESN_Volume'],\n",
+       "Index(['Cleaned_NSEI_MAX_Close', 'Cleaned_NSEI_MAX_Open',\n",
+       "       'Cleaned_NSEI_MAX_High', 'Cleaned_NSEI_MAX_Low',\n",
+       "       'Cleaned_NSEI_MAX_Volume', 'Cleaned_IXIC_Max_Open',\n",
+       "       'Cleaned_IXIC_Max_High', 'Cleaned_IXIC_Max_Low',\n",
+       "       'Cleaned_IXIC_Max_Close', 'Cleaned_IXIC_Max_Adj Close',\n",
+       "       'Cleaned_IXIC_Max_Volume', 'Cleaned_HDFCBANK_Close',\n",
+       "       'Cleaned_HDFCBANK_Open', 'Cleaned_HDFCBANK_High',\n",
+       "       'Cleaned_HDFCBANK_Low', 'Cleaned_HDFCBANK_Volume',\n",
+       "       'Cleaned_GSPC_Max_Open', 'Cleaned_GSPC_Max_High',\n",
+       "       'Cleaned_GSPC_Max_Low', 'Cleaned_GSPC_Max_Close',\n",
+       "       'Cleaned_GSPC_Max_Adj Close', 'Cleaned_GSPC_Max_Volume',\n",
+       "       'Cleaned_BSESN_Max_Open', 'Cleaned_BSESN_Max_High',\n",
+       "       'Cleaned_BSESN_Max_Low', 'Cleaned_BSESN_Max_Close',\n",
+       "       'Cleaned_BSESN_Max_Adj Close', 'Cleaned_BSESN_Max_Volume',\n",
+       "       'Cleaned_RUT_Max_Open', 'Cleaned_RUT_Max_High', 'Cleaned_RUT_Max_Low',\n",
+       "       'Cleaned_RUT_Max_Close', 'Cleaned_RUT_Max_Adj Close',\n",
+       "       'Cleaned_RUT_Max_Volume'],\n",
        "      dtype='object')"
       ]
      },
-     "execution_count": 20,
+     "execution_count": 23,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1422,45 +1605,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
-   "id": "ac9e38d7",
+   "execution_count": 24,
+   "id": "67d7b84e",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:14.299583Z",
-     "iopub.status.busy": "2026-01-25T06:04:14.299193Z",
-     "iopub.status.idle": "2026-01-25T06:04:15.026961Z",
-     "shell.execute_reply": "2026-01-25T06:04:15.025773Z"
+     "iopub.execute_input": "2026-01-25T09:09:15.747329Z",
+     "iopub.status.busy": "2026-01-25T09:09:15.746818Z",
+     "iopub.status.idle": "2026-01-25T09:09:17.836379Z",
+     "shell.execute_reply": "2026-01-25T09:09:17.835254Z"
     },
     "papermill": {
-     "duration": 0.737388,
-     "end_time": "2026-01-25T06:04:15.029390",
+     "duration": 2.099504,
+     "end_time": "2026-01-25T09:09:17.838332",
      "exception": false,
-     "start_time": "2026-01-25T06:04:14.292002",
-     "status": "completed"
-    },
-    "tags": []
-   },
-   "outputs": [],
-   "source": [
-    "df_final.to_csv('Merged_data.csv')"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 22,
-   "id": "8dfe0c35",
-   "metadata": {
-    "execution": {
-     "iopub.execute_input": "2026-01-25T06:04:15.043843Z",
-     "iopub.status.busy": "2026-01-25T06:04:15.043451Z",
-     "iopub.status.idle": "2026-01-25T06:04:18.397696Z",
-     "shell.execute_reply": "2026-01-25T06:04:18.396348Z"
-    },
-    "papermill": {
-     "duration": 3.364543,
-     "end_time": "2026-01-25T06:04:18.400039",
-     "exception": false,
-     "start_time": "2026-01-25T06:04:15.035496",
+     "start_time": "2026-01-25T09:09:15.738828",
      "status": "completed"
     },
     "tags": []
@@ -1473,11 +1631,11 @@
       "Copying files:\n",
       "  ✓ Merged_data.csv\n",
       "  ✓ NSEI.csv\n",
+      "  ✓ IXIC.csv\n",
       "  ✓ RUT.csv\n",
       "  ✓ GSPC.csv\n",
-      "  ✓ IXIC.csv\n",
-      "  ✓ HDFCBANK.NS.csv\n",
       "  ✓ BSESN.csv\n",
+      "  ✓ HDFCBANK.NS.csv\n",
       "\n",
       "Copying folders:\n",
       "\n",
@@ -1557,6 +1715,23 @@
     "\n",
     "os.chdir(source)"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0ee0f2f6",
+   "metadata": {
+    "papermill": {
+     "duration": 0.00594,
+     "end_time": "2026-01-25T09:09:17.850836",
+     "exception": false,
+     "start_time": "2026-01-25T09:09:17.844896",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
@@ -1593,14 +1768,14 @@
   },
   "papermill": {
    "default_parameters": {},
-   "duration": 11.38495,
-   "end_time": "2026-01-25T06:04:18.927747",
+   "duration": 10.644616,
+   "end_time": "2026-01-25T09:09:18.480412",
    "environment_variables": {},
    "exception": null,
    "input_path": "__notebook__.ipynb",
    "output_path": "__notebook__.ipynb",
    "parameters": {},
-   "start_time": "2026-01-25T06:04:07.542797",
+   "start_time": "2026-01-25T09:09:07.835796",
    "version": "2.6.0"
   }
  },
