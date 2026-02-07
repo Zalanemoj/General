@@ -390,44 +390,6 @@ Refer to individual project folders for specific instructions and requirements.
 
 ---
 
-## 📊 Sample Outputs
-
-### Time Series Prediction
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="Outputs_LSTM_HDFC_Prediction/figures/training_loss.png" width="350" alt="Training Loss"/>
-      <br />
-      <em>Model Training Progress</em>
-    </td>
-    <td align="center">
-      <img src="Outputs_LSTM_HDFC_Prediction/figures/predictions.png" width="350" alt="Predictions"/>
-      <br />
-      <em>Stock Price Predictions</em>
-    </td>
-  </tr>
-</table>
-
-### Time Series Analysis
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="Outputs_Time-Series-Eda/figures/trend_analysis.png" width="350" alt="Trend"/>
-      <br />
-      <em>Trend Decomposition</em>
-    </td>
-    <td align="center">
-      <img src="Outputs_Time-Series-Eda/figures/acf_pacf.png" width="350" alt="ACF PACF"/>
-      <br />
-      <em>Autocorrelation Analysis</em>
-    </td>
-  </tr>
-</table>
-
----
-
 ## 🎓 Learning Resources
 
 Each project includes:
